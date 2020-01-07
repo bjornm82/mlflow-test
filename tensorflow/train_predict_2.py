@@ -150,8 +150,8 @@ def main(argv):
         # Recreate the exact same model, including its weights and the optimizer
         # new_model = tf.keras.models.load_model('s3://druid-index-eu-west-1/mlflow/4/0277d7cf6de545f2bd9dc6f2a08bbeb4/artifacts/model/tfmodel')
 
-        # Show the model architecture
-        new_model.summary()
+        pruned = imported.prune("x:0", "out:0")
+        pruned(tf.ones([]))
 
         receiver_fn = tf.estimator.export.build_raw_serving_input_receiver_fn(feat_specifications)
         temp = tempfile.mkdtemp()
