@@ -22,6 +22,7 @@ CSV_COLUMN_NAMES = ['SepalLength', 'SepalWidth',
 SPECIES = ['Setosa', 'Versicolor', 'Virginica']
 
 os.environ["S3_ENDPOINT"] = "s3-eu-west-1.amazonaws.com"
+os.environ["AWS_REGION"] = "eu-west-1"
 
 def load_data(y_name='Species'):
     """Returns the iris dataset as (train_x, train_y), (test_x, test_y)."""
