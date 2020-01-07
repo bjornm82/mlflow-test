@@ -144,7 +144,7 @@ def main(argv):
         }
 
         # Recreate the exact same model, including its weights and the optimizer
-        new_model = tf.keras.models.load_model('s3://druid-index-eu-west-1/mlflow/4/09c9ce210fec472eb635ee22ea360387/artifacts/model/tfmodel')
+        new_model = tf.keras.models.load_model('s3://druid-index-eu-west-1.s3-eu-west-1.amazonaws.com/mlflow/4/0277d7cf6de545f2bd9dc6f2a08bbeb4/artifacts/model/tfmodel/')
 
         # Show the model architecture
         print(new_model.summary())
