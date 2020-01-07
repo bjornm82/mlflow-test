@@ -21,6 +21,7 @@ CSV_COLUMN_NAMES = ['SepalLength', 'SepalWidth',
                     'PetalLength', 'PetalWidth', 'Species']
 SPECIES = ['Setosa', 'Versicolor', 'Virginica']
 
+os.environ["S3_ENDPOINT"] = "s3-eu-west-1.amazonaws.com"
 
 def load_data(y_name='Species'):
     """Returns the iris dataset as (train_x, train_y), (test_x, test_y)."""
@@ -143,8 +144,6 @@ def main(argv):
             'PetalLength': tf.Variable([], dtype=tf.float64, name="PetalLength"),
             'PetalWidth': tf.Variable([], dtype=tf.float64, name="PetalWidth")
         }
-
-        os.environ["S3_ENDPOINT"] = "s3-eu-west-1.amazonaws.com"
 
         new_model = tf.saved_model.load('s3://druid-index-eu-west-1/mlflow/4/0277d7cf6de545f2bd9dc6f2a08bbeb4/artifacts/model/tfmodel')
         # Recreate the exact same model, including its weights and the optimizer
