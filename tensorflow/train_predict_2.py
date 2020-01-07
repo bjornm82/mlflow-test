@@ -143,6 +143,12 @@ def main(argv):
             'PetalWidth': tf.Variable([], dtype=tf.float64, name="PetalWidth")
         }
 
+        # Recreate the exact same model, including its weights and the optimizer
+        new_model = tf.keras.models.load_model('s3://druid-index-eu-west-1/mlflow/4/09c9ce210fec472eb635ee22ea360387/artifacts/model')
+
+        # Show the model architecture
+        print(new_model.summary())
+
         receiver_fn = tf.estimator.export.build_raw_serving_input_receiver_fn(feat_specifications)
         temp = tempfile.mkdtemp()
         try:
