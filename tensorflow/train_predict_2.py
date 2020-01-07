@@ -12,6 +12,7 @@ import shutil
 import tempfile
 import tensorflow as tf
 import mlflow.tensorflow
+import os
 
 TRAIN_URL = "http://download.tensorflow.org/data/iris_training.csv"
 TEST_URL = "http://download.tensorflow.org/data/iris_test.csv"
@@ -75,6 +76,7 @@ parser.add_argument('--train_steps', default=1000, type=int,
                     help='number of training steps')
 
 def main(argv):
+    os.environ["S3_ENDPOINT"] = "https://druid-index-eu-west-1.s3-eu-west-1.amazonaws.com/"
     with mlflow.start_run():
         args = parser.parse_args(argv[1:])
 
