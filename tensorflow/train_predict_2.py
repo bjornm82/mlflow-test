@@ -76,7 +76,7 @@ parser.add_argument('--train_steps', default=1000, type=int,
                     help='number of training steps')
 
 def main(argv):
-    os.environ["S3_ENDPOINT"] = "https://druid-index-eu-west-1.s3-eu-west-1.amazonaws.com/"
+    os.environ["S3_ENDPOINT"] = "https://druid-index-eu-west-1.s3-eu-west-1.amazonaws.com/mlflow/4/0277d7cf6de545f2bd9dc6f2a08bbeb4/artifacts/model/tfmodel"
     with mlflow.start_run():
         args = parser.parse_args(argv[1:])
 
