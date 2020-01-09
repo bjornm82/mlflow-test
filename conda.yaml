@@ -2,10 +2,10 @@ name: tutorial
 channels:
   - defaults
 dependencies:
-  - papermill
   - numpy=1.14.3
   - pandas=0.22.0
   - scikit-learn=0.19.1
   - boto3
   - pip:
     - mlflow
+    - papermill[all]
