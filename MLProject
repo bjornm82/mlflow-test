@@ -7,4 +7,4 @@ entry_points:
     parameters:
       alpha: float
       l1_ratio: {type: float, default: 0.1}
-    command: "papermill train.ipynb /output.ipynb -p {alpha} -p {l1_ratio}"
+    command: "papermill train.ipynb /output.ipynb -p alpha {alpha} -p l1_ratio {l1_ratio}"
