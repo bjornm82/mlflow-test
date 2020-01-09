@@ -6,6 +6,7 @@ dependencies:
   - pandas=0.22.0
   - scikit-learn=0.19.1
   - boto3
+  - nb_conda_kernels
   - pip:
     - mlflow
     - papermill[all]
