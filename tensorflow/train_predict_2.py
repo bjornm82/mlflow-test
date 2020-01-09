@@ -147,9 +147,6 @@ def main(argv):
         }
 
         imported = tf.saved_model.load('s3://druid-index-eu-west-1/mlflow/4/0277d7cf6de545f2bd9dc6f2a08bbeb4/artifacts/model/tfmodel')
-        # Recreate the exact same model, including its weights and the optimizer
-        # new_model = tf.keras.models.load_model('s3://druid-index-eu-west-1/mlflow/4/0277d7cf6de545f2bd9dc6f2a08bbeb4/artifacts/model/tfmodel')
-
         pruned = imported.prune("x:0", "out:0")
         pruned(tf.ones([]))
 
